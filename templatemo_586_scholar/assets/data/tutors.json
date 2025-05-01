@@ -1,0 +1,248 @@
+{
+    "tutors": [
+        {
+            "id": "sarah-johnson",
+            "name": "Dr. Sarah Johnson",
+            "subject": "Mathematics",
+            "image": "assets/images/tutor-01.jpg",
+            "rating": 4.9,
+            "reviews": 142,
+            "location": "New York, NY",
+            "availability": "Flexible Hours",
+            "availabilitySlots": {
+                "weekdays": ["09:00", "11:00", "14:00", "16:00", "19:00"],
+                "weekends": ["10:00", "13:00", "15:00"]
+            },
+            "rate": "$75/hour",
+            "bio": "PhD in Mathematics with 10+ years teaching experience. Specializes in Calculus and Algebra.",
+            "education": [
+                {
+                    "degree": "PhD in Mathematics",
+                    "university": "Columbia University, 2012"
+                },
+                {
+                    "degree": "Master of Science in Mathematics",
+                    "university": "New York University, 2008"
+                }
+            ],
+            "subjects": ["Algebra I & II", "Geometry", "Trigonometry", "Calculus", "Linear Algebra"],
+            "reviewsList": [
+                {
+                    "author": "Jason M.",
+                    "rating": 5,
+                    "date": "May 12, 2023",
+                    "comment": "Dr. Johnson helped me go from barely passing to an A in AP Calculus."
+                },
+                {
+                    "author": "Lisa T.",
+                    "rating": 5,
+                    "date": "April 3, 2023",
+                    "comment": "My daughter's SAT math score increased by 180 points after just 8 sessions!"
+                }
+            ]
+        },
+        {
+            "id": "michael-chen",
+            "name": "Michael Chen",
+            "subject": "Chemistry",
+            "image": "assets/images/tutor-02.jpg",
+            "rating": 4.5,
+            "reviews": 97,
+            "location": "Online Only",
+            "availability": "Evenings/Weekends",
+            "rate": "$65/hour",
+            "bio": "Research chemist with 8 years of tutoring experience. Makes complex concepts easy to understand.",
+            "education": [
+                {
+                    "degree": "PhD in Chemistry",
+                    "university": "MIT, 2015"
+                }
+            ],
+            "subjects": ["General Chemistry", "Organic Chemistry", "AP Chemistry"],
+            "reviewsList": [
+                {
+                    "author": "David K.",
+                    "rating": 5,
+                    "date": "March 22, 2023",
+                    "comment": "Michael made organic chemistry actually make sense!"
+                }
+            ]
+        },
+        {
+            "id": "elena-rodriguez",
+            "name": "Elena Rodriguez",
+            "subject": "Spanish",
+            "image": "assets/images/tutor-03.jpg",
+            "rating": 5,
+            "reviews": 203,
+            "location": "Miami, FL",
+            "availability": "Weekday Afternoons",
+            "rate": "$45/hour",
+            "bio": "Native Spanish speaker with certification in language instruction. Focuses on conversational skills.",
+            "education": [
+                {
+                    "degree": "BA in Spanish Literature",
+                    "university": "University of Miami, 2010"
+                },
+                {
+                    "degree": "Teaching Certification",
+                    "university": "Florida International University, 2012"
+                }
+            ],
+            "subjects": ["Spanish I-IV", "Conversational Spanish", "AP Spanish"],
+            "reviewsList": [
+                {
+                    "author": "Maria G.",
+                    "rating": 5,
+                    "date": "June 5, 2023",
+                    "comment": "Elena helped me become fluent in just 6 months!"
+                },
+                {
+                    "author": "Robert H.",
+                    "rating": 5,
+                    "date": "May 18, 2023",
+                    "comment": "Best Spanish tutor I've ever had. Very patient and knowledgeable."
+                }
+            ]
+        },
+        {
+            "id": "david-wilson",
+            "name": "David Wilson",
+            "subject": "SAT/ACT Prep",
+            "image": "assets/images/tutor-04.jpg",
+            "rating": 5,
+            "reviews": 178,
+            "location": "Boston, MA",
+            "availability": "Flexible",
+            "rate": "$90/hour",
+            "bio": "Specializes in test-taking strategies with proven results. Average student improvement: 250+ points.",
+            "education": [
+                {
+                    "degree": "MA in Education",
+                    "university": "Harvard University, 2014"
+                }
+            ],
+            "subjects": ["SAT Math", "SAT Reading/Writing", "ACT Prep", "Test Strategies"],
+            "reviewsList": [
+                {
+                    "author": "Sarah L.",
+                    "rating": 5,
+                    "date": "April 30, 2023",
+                    "comment": "My SAT score went from 1200 to 1480 with David's help!"
+                }
+            ]
+        },
+        {
+            "id": "jennifer-lee",
+            "name": "Jennifer Lee",
+            "subject": "Physics",
+            "image": "assets/images/tutor-05.jpg",
+            "rating": 5,
+            "reviews": 156,
+            "location": "Chicago, IL",
+            "availability": "Weekdays",
+            "rate": "$80/hour",
+            "bio": "MIT graduate with 7 years of teaching experience. Specializes in AP Physics and college-level courses.",
+            "education": [
+                {
+                    "degree": "BS in Physics",
+                    "university": "MIT, 2016"
+                }
+            ],
+            "subjects": ["Physics I & II", "AP Physics", "College Physics"],
+            "reviewsList": [
+                {
+                    "author": "Thomas R.",
+                    "rating": 5,
+                    "date": "June 2, 2023",
+                    "comment": "Jennifer explains concepts in a way that finally made physics click for me."
+                }
+            ]
+        },
+        {
+            "id": "robert-garcia",
+            "name": "Robert Garcia",
+            "subject": "Computer Science",
+            "image": "assets/images/tutor-06.jpg",
+            "rating": 4.7,
+            "reviews": 112,
+            "location": "San Francisco, CA",
+            "availability": "Evenings",
+            "rate": "$95/hour",
+            "bio": "Senior software engineer teaching Python, Java, and web development. Industry professional with 10+ years experience.",
+            "education": [
+                {
+                    "degree": "MS in Computer Science",
+                    "university": "Stanford University, 2013"
+                }
+            ],
+            "subjects": ["Python", "Java", "Web Development", "Data Structures"],
+            "reviewsList": [
+                {
+                    "author": "Emily W.",
+                    "rating": 5,
+                    "date": "May 22, 2023",
+                    "comment": "Robert helped me land my first software engineering job!"
+                }
+            ]
+        },
+        {
+            "id": "amanda-smith",
+            "name": "Amanda Smith",
+            "subject": "English Literature",
+            "image": "assets/images/tutor-07.jpg",
+            "rating": 5,
+            "reviews": 89,
+            "location": "Austin, TX",
+            "availability": "Flexible",
+            "rate": "$60/hour",
+            "bio": "PhD in English Literature with specialization in academic writing and critical analysis.",
+            "education": [
+                {
+                    "degree": "PhD in English Literature",
+                    "university": "University of Texas, 2018"
+                }
+            ],
+            "subjects": ["English Literature", "Academic Writing", "AP English"],
+            "reviewsList": [
+                {
+                    "author": "Daniel P.",
+                    "rating": 5,
+                    "date": "June 10, 2023",
+                    "comment": "Amanda helped me improve my college essays tremendously."
+                }
+            ]
+        },
+        {
+            "id": "james-wilson",
+            "name": "James Wilson",
+            "subject": "Biology",
+            "image": "assets/images/tutor-08.jpg",
+            "rating": 5,
+            "reviews": 134,
+            "location": "Philadelphia, PA",
+            "availability": "Weekends",
+            "rate": "$70/hour",
+            "bio": "Medical student teaching AP Biology and college-level courses. Focus on MCAT preparation.",
+            "education": [
+                {
+                    "degree": "MD Candidate",
+                    "university": "University of Pennsylvania, 2025"
+                },
+                {
+                    "degree": "BS in Biology",
+                    "university": "Duke University, 2021"
+                }
+            ],
+            "subjects": ["Biology", "AP Biology", "MCAT Prep"],
+            "reviewsList": [
+                {
+                    "author": "Olivia M.",
+                    "rating": 5,
+                    "date": "May 15, 2023",
+                    "comment": "James helped me score in the 95th percentile on the MCAT!"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,548 @@
+/* ============ Header Styles ============ */
+.header-area {
+    position: relative;
+    z-index: 100;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+
+.header-area .logo h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.header-area .nav li a {
+    color: white;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ============ Tutor Profile Header ============ */
+.tutor-profile-header {
+    background: #f9f9f9;
+    padding: 100px 0 30px;
+    margin-top: -50px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 1;
+}
+
+.tutor-photo {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.tutor-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.tutor-basic-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* ============ Booking Calendar Styles ============ */
+.calendar-container {
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.flatpickr-calendar {
+    width: 100% !important;
+    margin: 0 auto;
+}
+
+.time-slots {
+    margin-top: 20px;
+}
+
+.time-slots h6 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.time-slot {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    background: #f0f4ff;
+    color: #4a6cf7;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.time-slot:hover {
+    background: #4a6cf7;
+    color: white;
+}
+
+.time-slot.selected {
+    background: #4a6cf7;
+    color: white;
+}
+
+.book-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+/* ============ Tutor Information Styles ============ */
+.subject-badge {
+    display: inline-block;
+    background: #7453fc;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.tutor-stats {
+    display: flex;
+    margin: 20px 0;
+}
+
+.tutor-stats .stat-item {
+    margin-right: 30px;
+    text-align: center;
+}
+
+.tutor-stats .stat-item h4 {
+    font-size: 1.8rem;
+    color: #7453fc;
+    margin-bottom: 5px;
+}
+
+.tutor-stats .stat-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.hourly-rate {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: inline-block;
+}
+
+.hourly-rate h3 {
+    font-size: 2rem;
+    color: #7453fc;
+    margin-bottom: 15px;
+}
+
+.hourly-rate h3 span {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* ============ Content Sections ============ */
+.tutor-details-section {
+    padding: 60px 0;
+}
+
+.tutor-about, 
+.tutor-education, 
+.tutor-subjects, 
+.tutor-reviews {
+    margin-bottom: 50px;
+}
+
+.tutor-sidebar {
+    position: sticky;
+    top: 30px;
+}
+
+.availability-widget, 
+.teaching-style, 
+.lesson-options, 
+.contact-tutor {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+/* ============ Subjects & Tags ============ */
+.subject-tags, 
+.style-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.subject-tags span, 
+.style-tags span {
+    background: #f0edff;
+    color: #7453fc;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+
+/* ============ Reviews Section ============ */
+.review-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+}
+
+.reviewer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review-rating {
+    text-align: right;
+}
+
+.review-rating span {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* ============ Schedule Section ============ */
+.schedule-section {
+    background: #f9f9f9;
+    padding: 60px 0;
+    border-top: 1px solid #eee;
+}
+
+.schedule-widget {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+/* ============ Miscellaneous ============ */
+.full-width {
+    width: 100%;
+    text-align: center;
+}
+
+.location {
+    color: #666;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.location i {
+    margin-right: 5px;
+}
+
+/* ============ Responsive Styles ============ */
+@media (max-width: 992px) {
+    .tutor-profile-header {
+        padding-top: 80px;
+    }
+    
+    .tutor-photo {
+        margin-bottom: 30px;
+    }
+    
+    .tutor-stats {
+        flex-direction: column;
+    }
+    
+    .tutor-stats .stat-item {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .flatpickr-calendar {
+        max-width: 280px;
+    }
+}
+/* ============ Hamburger Menu Styles ============ */
+.menu-trigger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 1001;
+}
+
+.menu-trigger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.menu-trigger span:nth-child(1) {
+    top: 0;
+}
+
+.menu-trigger span:nth-child(2) {
+    top: 10px;
+}
+
+.menu-trigger span:nth-child(3) {
+    top: 20px;
+}
+
+/* When menu is open */
+.menu-trigger.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+
+.menu-trigger.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.menu-trigger.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+}
+
+/* Navigation Menu */
+.nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin-left: 30px;
+}
+
+.nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav li a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .menu-trigger {
+        display: block;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        z-index: 1000;
+        padding-top: 80px;
+    }
+    
+    .nav.active {
+        right: 0;
+    }
+    
+    .nav li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav li a {
+        display: block;
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .nav.active li {
+        display: block !important;
+    }
+}
+
+/* ============ Mobile Menu Fix ============ */
+@media (max-width: 768px) {
+    .main-nav {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+        transition: all 0.5s ease;
+        z-index: 999;
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+        display: block !important;
+    }
+
+    .nav li a {
+        display: block;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+    }
+
+    .menu-trigger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Calendar Styles */
+.calendar-container {
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.flatpickr-calendar {
+    width: 100% !important;
+    margin: 0 auto;
+    box-shadow: none;
+}
+
+.time-slots {
+    margin-top: 20px;
+}
+
+.time-slots h6 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.time-slot {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    background: #f0f4ff;
+    color: #4a6cf7;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.time-slot:hover {
+    background: #4a6cf7;
+    color: white;
+}
+
+.time-slot.selected {
+    background: #4a6cf7;
+    color: white;
+}
+
+.book-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.book-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+
+
