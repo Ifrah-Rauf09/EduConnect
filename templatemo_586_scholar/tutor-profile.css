@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* ============ Header Styles ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .header-area {
     position: relative;
     z-index: 100;
@@ -22,6 +26,10 @@
     align-items: center;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Tutor Profile Header ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .tutor-profile-header {
     background: #f9f9f9;
     padding: 100px 0 30px;
@@ -49,6 +57,10 @@
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Booking Calendar Styles ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .calendar-container {
     padding: 15px;
     background: white;
@@ -100,6 +112,10 @@
     border: none;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Tutor Information Styles ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .subject-badge {
     display: inline-block;
     background: #7453fc;
@@ -150,6 +166,10 @@
     color: #666;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Content Sections ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .tutor-details-section {
     padding: 60px 0;
 }
@@ -177,6 +197,10 @@
     margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Subjects & Tags ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .subject-tags, 
 .style-tags {
     display: flex;
@@ -193,6 +217,10 @@
     font-size: 0.9rem;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Reviews Section ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .review-item {
     background: white;
     padding: 20px;
@@ -231,6 +259,10 @@
     margin-top: 5px;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Schedule Section ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .schedule-section {
     background: #f9f9f9;
     padding: 60px 0;
@@ -245,6 +277,10 @@
     margin-top: 30px;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Miscellaneous ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .full-width {
     width: 100%;
     text-align: center;
@@ -260,6 +296,10 @@
     margin-right: 5px;
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Responsive Styles ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 @media (max-width: 992px) {
     .tutor-profile-header {
         padding-top: 80px;
@@ -282,7 +322,11 @@
         max-width: 280px;
     }
 }
+<<<<<<< HEAD
 
+=======
+/* ============ Hamburger Menu Styles ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .menu-trigger {
     display: none;
     cursor: pointer;
@@ -317,6 +361,10 @@
     top: 20px;
 }
 
+<<<<<<< HEAD
+=======
+/* When menu is open */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .menu-trigger.open span:nth-child(1) {
     top: 10px;
     transform: rotate(135deg);
@@ -332,6 +380,10 @@
     transform: rotate(-135deg);
 }
 
+<<<<<<< HEAD
+=======
+/* Navigation Menu */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .nav {
     display: flex;
     align-items: center;
@@ -355,6 +407,10 @@
     opacity: 0.8;
 }
 
+<<<<<<< HEAD
+=======
+/* Responsive Menu */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 @media (max-width: 768px) {
     .menu-trigger {
         display: block;
@@ -397,6 +453,10 @@
     }
 }
 
+<<<<<<< HEAD
+=======
+/* ============ Mobile Menu Fix ============ */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 @media (max-width: 768px) {
     .main-nav {
         position: relative;
@@ -471,6 +531,10 @@
     height: 100%;
 }
 
+<<<<<<< HEAD
+=======
+/* Calendar Styles */
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
 .calendar-container {
     padding: 15px;
     background: white;

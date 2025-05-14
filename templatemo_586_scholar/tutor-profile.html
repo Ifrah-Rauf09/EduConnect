@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<<<<<<< HEAD
     <script src="assets/js/animate.js"></script> 
+=======
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
     <style>
         .tutor-profile-header {
             background: linear-gradient(135deg, #6e8efb, #a777e3);
@@ -296,7 +299,12 @@
             }
 
             let bookedSlots = JSON.parse(localStorage.getItem('bookedSlots')) || {};
+<<<<<<< HEAD
 
+=======
+            
+            // Clean up expired slots on load
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
             cleanExpiredSlots();
     
             // Tutor Profile Loading
@@ -323,20 +331,35 @@
             function cleanExpiredSlots() {
                 const now = new Date();
                 let changed = false;
+<<<<<<< HEAD
 
+=======
+                
+                // Check each booked slot for expiration
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                 for (const slotKey in bookedSlots) {
                     if (bookedSlots.hasOwnProperty(slotKey)) {
                         const parts = slotKey.split('-');
                         const dateStr = parts[1];
                         const slotDate = new Date(dateStr);
+<<<<<<< HEAD
 
+=======
+                        
+                        // If slot date is in the past, remove it
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                         if (slotDate < now) {
                             delete bookedSlots[slotKey];
                             changed = true;
                         }
                     }
                 }
+<<<<<<< HEAD
 
+=======
+                
+                // Save to localStorage if anything changed
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                 if (changed) {
                     localStorage.setItem('bookedSlots', JSON.stringify(bookedSlots));
                 }
@@ -349,10 +372,19 @@
                     const element = document.getElementById(`tutor-${field}`);
                     if (element) element.textContent = tutor[field];
                 });
+<<<<<<< HEAD
 
                 const tutorName = tutor.name.toLowerCase().replace(/\s+/g, '');
                 document.getElementById('tutor-email').textContent = `${tutorName}@gmail.com`;
 
+=======
+                
+                // Generate and set contact info dynamically
+                const tutorName = tutor.name.toLowerCase().replace(/\s+/g, '');
+                document.getElementById('tutor-email').textContent = `${tutorName}@gmail.com`;
+                
+                // Generate random Indian phone number (10 digits starting with 6-9)
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                 const randomPhone = '9' + Math.floor(Math.random() * 900000000 + 100000000).toString();
                 document.getElementById('tutor-phone').textContent = `+91 ${randomPhone.slice(0,5)} ${randomPhone.slice(5)}`;
 
@@ -366,7 +398,12 @@
                         this.src = 'assets/images/default-tutor.jpg';
                     };
                 }
+<<<<<<< HEAD
 
+=======
+                
+                // Set rating
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                 const ratingElement = document.getElementById('tutor-rating');
                 if (ratingElement) {
                     let stars = '';
@@ -379,21 +416,36 @@
                     }
                     ratingElement.innerHTML = `${stars} <span>(${tutor.reviews} reviews)</span>`;
                 }
+<<<<<<< HEAD
 
+=======
+                
+                // Set education
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                 const educationList = document.getElementById('tutor-education');
                 if (educationList) {
                     educationList.innerHTML = tutor.education?.length ? 
                         tutor.education.map(edu => `<li><strong>${edu.degree}</strong><br>${edu.university}</li>`).join('') : 
                         '<li>No education information available</li>';
                 }
+<<<<<<< HEAD
 
+=======
+                
+                // Set subjects
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                 const subjectsContainer = document.getElementById('tutor-subjects');
                 if (subjectsContainer) {
                     subjectsContainer.innerHTML = tutor.subjects?.length ? 
                         tutor.subjects.map(subj => `<span class="subject-tag">${subj}</span>`).join('') : 
                         '<p>No subjects listed</p>';
                 }
+<<<<<<< HEAD
 
+=======
+                
+                // Set reviews
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                 const reviewsContainer = document.getElementById('tutor-reviews');
                 if (reviewsContainer) {
                     reviewsContainer.innerHTML = tutor.reviewsList?.length ? 
@@ -473,6 +525,7 @@
                     const slotKey = `${tutorId}-${dateKey}-${slot}`;
                     const slotElement = document.createElement('div');
                     slotElement.className = 'time-slot';
+<<<<<<< HEAD
 
                     const slotDate = new Date(dateKey);
                     const isExpired = slotDate < now;
@@ -480,6 +533,18 @@
                     const isBooked = bookedSlots[slotKey] && !isExpired;
                     
                     if (isBooked) {
+=======
+                    
+                    // Check if slot is expired (date is in past)
+                    const slotDate = new Date(dateKey);
+                    const isExpired = slotDate < now;
+                    
+                    // If slot is booked but expired, treat it as available
+                    const isBooked = bookedSlots[slotKey] && !isExpired;
+                    
+                    if (isBooked) {
+                        // Booked slot (red)
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                         slotElement.innerHTML = `
                             <span class="booked-slot">
                                 ${slot} <i class="fa fa-ban"></i>
@@ -488,6 +553,10 @@
                         slotElement.classList.add('booked');
                         slotElement.style.cursor = 'not-allowed';
                     } else {
+<<<<<<< HEAD
+=======
+                        // Available slot (green)
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                         slotElement.innerHTML = `
                             <span class="available-slot">
                                 ${slot} <i class="fa fa-hand-pointer-o"></i>
@@ -515,7 +584,12 @@
                     month: 'long',
                     day: 'numeric'
                 });
+<<<<<<< HEAD
 
+=======
+                
+                // Mark slot as booked
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
                 bookedSlots[slotKey] = true;
                 localStorage.setItem('bookedSlots', JSON.stringify(bookedSlots));
 
@@ -549,6 +623,7 @@
                 `;
             }
         });
+<<<<<<< HEAD
 
         document.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -597,6 +672,8 @@
     alert('Failed to load tutor details. Please try again later.');
   }
 });
+=======
+>>>>>>> aeef633e1d0746f2cac4b24af570c66ddb6dfbc6
     </script>
 </body>
 </html>
