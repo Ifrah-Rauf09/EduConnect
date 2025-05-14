@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Profile | EduConnect</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="assets/js/animate.js"></script> 
+    <style>
+        .tutor-profile-header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 50px 0;
+            margin-bottom: 50px;
+        }
+        .tutor-photo img {
+            border-radius: 10px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 300px;
+        }
+        .rating i {
+            color: #ffc107;
+        }
+        .subject-tag {
+            background: #f0f4ff;
+            color: #4a6cf7;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5px;
+        }
+        .review {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .tutor-meta span {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .qualifications li {
+            margin-bottom: 15px;
+        }
+        .profile-section {
+            margin-bottom: 40px;
+        }
+        .time-slot {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .time-slot.available {
+            background-color: #4CAF50; 
+            color: white;
+        }
+        
+        .time-slot.available:hover {
+            background-color: #45a049;
+        }
+        
+        .time-slot.available.selected {
+            background-color: #2196F3; 
+        }
+        
+        .time-slot.booked {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        #book-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #book-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        #book-btn:hover:not(:disabled) {
+            background-color: #45a049;
+        }
+
+        #contact {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info i {
+            font-size: 20px;
+            margin-right: 15px;
+            color: #6e8efb;
+        }
+        
+        .contact-details {
+            flex: 1;
+        }
+        
+        .contact-details h5 {
+            margin-bottom: 5px;
+        }
+        
+        .contact-details p {
+            margin: 0;
+            color: #666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Area -->
+    <header class="header-area header-sticky" style="background: linear-gradient(135deg, #6e8efb, #a777e3) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <h1>EduConnect</h1>
+                        </a>
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#tutors">Find Tutors</a></li>
+                            <li><a href="index.html#subjects">Subjects</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="tutor-profile-header" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center">
+                    <div class="tutor-photo">
+                        <img id="tutor-img" src="" alt="Tutor" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tutor-basic-info">
+                        <h1 id="tutor-name"></h1>
+                        <span class="badge bg-primary" id="tutor-subject"></span>
+                        <div class="rating mt-2" id="tutor-rating"></div>
+                        <p class="mt-3" id="tutor-bio"></p>
+                        <div class="tutor-meta mt-3">
+                            <span><i class="fa fa-map-marker"></i> <span id="tutor-location"></span></span>
+                            <span><i class="fa fa-clock-o"></i> <span id="tutor-availability"></span></span>
+                            <span><i class="fa fa-usd"></i> <span id="tutor-rate"></span></span>
+                        </div>
+                        <div class="action-buttons mt-4">
+                            <a href="#contact" class="main-button me-2">Contact Tutor</a>
+                            <a href="#schedule" class="main-button">Book Session</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="profile-section">
+                    <h3>Education & Qualifications</h3>
+                    <ul class="qualifications" id="tutor-education"></ul>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Subjects Taught</h3>
+                    <div id="tutor-subjects"></div>
+                </div>
+
+                <div class="profile-section" id="reviews">
+                    <h3>Student Reviews</h3>
+                    <div id="tutor-reviews"></div>
+                </div>
+
+                <div class="profile-section" id="contact">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <i class="fa fa-envelope"></i>
+                        <div class="contact-details">
+                            <h5>Email</h5>
+                            <p id="tutor-email">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fa fa-phone"></i>
+                        <div class="contact-details">
+                            <h5>Phone</h5>
+                            <p id="tutor-phone">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fa fa-globe"></i>
+                        <div class="contact-details">
+                            <h5>Website</h5>
+                            <p id="tutor-website">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" id="schedule">
+                    <div class="card-body">
+                        <h5 class="card-title">Book a Session</h5>
+                        <div class="calendar-container">
+                            <div id="tutor-calendar"></div>
+                            <div class="time-slots">
+                                <h6>Available Time Slots:</h6>
+                                <div id="available-slots"></div>
+                            </div>
+                            <button id="book-btn" class="main-button book-btn mt-3" disabled>Book Selected Slot</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Area -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">Copyright © 2023 EduConnect. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuTrigger = document.querySelector('.menu-trigger');
+            const nav = document.querySelector('.nav');
+            const navOverlay = document.createElement('div');
+            
+            if (menuTrigger && nav) {
+                navOverlay.className = 'nav-overlay';
+                document.body.appendChild(navOverlay);
+    
+                menuTrigger.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    nav.classList.toggle('active');
+                    navOverlay.classList.toggle('active');
+                    document.body.classList.toggle('no-scroll');
+                });
+    
+                navOverlay.addEventListener('click', function() {
+                    menuTrigger.classList.remove('active');
+                    nav.classList.remove('active');
+                    this.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                });
+    
+                document.querySelectorAll('.nav li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuTrigger.classList.remove('active');
+                        nav.classList.remove('active');
+                        navOverlay.classList.remove('active');
+                        document.body.classList.remove('no-scroll');
+                    });
+                });
+            }
+
+            let bookedSlots = JSON.parse(localStorage.getItem('bookedSlots')) || {};
+
+            cleanExpiredSlots();
+    
+            // Tutor Profile Loading
+            const urlParams = new URLSearchParams(window.location.search);
+            const tutorId = urlParams.get('id');
+            let tutor; 
+            
+            if (tutorId) {
+                fetch('assets/data/tutors.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        tutor = data.tutors.find(t => t.id === tutorId);
+                        if (tutor) {
+                            displayTutorProfile(tutor);
+                            initializeCalendar(tutor);
+                        }
+                        else showError("Tutor not found");
+                    })
+                    .catch(() => showError("Error loading data"));
+            } else {
+                showError("No tutor specified");
+            }
+    
+            function cleanExpiredSlots() {
+                const now = new Date();
+                let changed = false;
+
+                for (const slotKey in bookedSlots) {
+                    if (bookedSlots.hasOwnProperty(slotKey)) {
+                        const parts = slotKey.split('-');
+                        const dateStr = parts[1];
+                        const slotDate = new Date(dateStr);
+
+                        if (slotDate < now) {
+                            delete bookedSlots[slotKey];
+                            changed = true;
+                        }
+                    }
+                }
+
+                if (changed) {
+                    localStorage.setItem('bookedSlots', JSON.stringify(bookedSlots));
+                }
+            }
+    
+            function displayTutorProfile(tutor) {
+                document.title = `${tutor.name} | EduConnect`;
+
+                ['name', 'subject', 'location', 'availability', 'rate', 'bio'].forEach(field => {
+                    const element = document.getElementById(`tutor-${field}`);
+                    if (element) element.textContent = tutor[field];
+                });
+
+                const tutorName = tutor.name.toLowerCase().replace(/\s+/g, '');
+                document.getElementById('tutor-email').textContent = `${tutorName}@gmail.com`;
+
+                const randomPhone = '9' + Math.floor(Math.random() * 900000000 + 100000000).toString();
+                document.getElementById('tutor-phone').textContent = `+91 ${randomPhone.slice(0,5)} ${randomPhone.slice(5)}`;
+
+                const websiteContainer = document.getElementById('tutor-website').parentElement.parentElement;
+                websiteContainer.parentNode.removeChild(websiteContainer);
+
+                const tutorImg = document.getElementById('tutor-img');
+                if (tutorImg) {
+                    tutorImg.src = tutor.image || 'assets/images/default-tutor.jpg';
+                    tutorImg.onerror = function() {
+                        this.src = 'assets/images/default-tutor.jpg';
+                    };
+                }
+
+                const ratingElement = document.getElementById('tutor-rating');
+                if (ratingElement) {
+                    let stars = '';
+                    for (let i = 0; i < 5; i++) {
+                        stars += i < Math.floor(tutor.rating) ? 
+                            '<i class="fa fa-star"></i>' : 
+                            (i === Math.floor(tutor.rating) && tutor.rating % 1 >= 0.5 ? 
+                             '<i class="fa fa-star-half-o"></i>' : 
+                             '<i class="fa fa-star-o"></i>');
+                    }
+                    ratingElement.innerHTML = `${stars} <span>(${tutor.reviews} reviews)</span>`;
+                }
+
+                const educationList = document.getElementById('tutor-education');
+                if (educationList) {
+                    educationList.innerHTML = tutor.education?.length ? 
+                        tutor.education.map(edu => `<li><strong>${edu.degree}</strong><br>${edu.university}</li>`).join('') : 
+                        '<li>No education information available</li>';
+                }
+
+                const subjectsContainer = document.getElementById('tutor-subjects');
+                if (subjectsContainer) {
+                    subjectsContainer.innerHTML = tutor.subjects?.length ? 
+                        tutor.subjects.map(subj => `<span class="subject-tag">${subj}</span>`).join('') : 
+                        '<p>No subjects listed</p>';
+                }
+
+                const reviewsContainer = document.getElementById('tutor-reviews');
+                if (reviewsContainer) {
+                    reviewsContainer.innerHTML = tutor.reviewsList?.length ? 
+                        tutor.reviewsList.map(review => `
+                            <div class="review">
+                                <div class="review-header d-flex justify-content-between">
+                                    <h5>${review.author}</h5>
+                                    <div class="rating">${
+                                        Array(5).fill(0).map((_,i) => 
+                                            i < review.rating ? 
+                                            '<i class="fa fa-star"></i>' : 
+                                            '<i class="fa fa-star-o"></i>'
+                                        ).join('')
+                                    }</div>
+                                </div>
+                                <p class="review-meta text-muted">${review.date}</p>
+                                <p>${review.comment}</p>
+                            </div>
+                        `).join('') : 
+                        '<p>No reviews yet</p>';
+                }
+            }
+    
+            function initializeCalendar(tutor) {
+                const calendar = flatpickr("#tutor-calendar", {
+                    inline: true,
+                    minDate: "today",
+                    maxDate: new Date().setFullYear(2030, 11, 31), // Extended to 2030
+                    defaultDate: "today",
+                    onChange: function(selectedDates) {
+                        updateTimeSlots(selectedDates[0], tutor.availabilitySlots || getDefaultAvailability());
+                    }
+                });
+    
+                document.getElementById('book-btn').addEventListener('click', function() {
+                    const selectedDate = calendar.selectedDates[0];
+                    const selectedSlot = document.querySelector('.time-slot.selected');
+                    
+                    if (selectedDate && selectedSlot) {
+                        const dateKey = selectedDate.toISOString().split('T')[0];
+                        const slotKey = `${tutor.id}-${dateKey}-${selectedSlot.textContent.trim()}`;
+                        
+                        if (bookedSlots[slotKey]) {
+                            alert("This slot is already booked. Please choose another available slot.");
+                        } else {
+                            bookSession(tutor.id, selectedDate, selectedSlot.textContent.trim(), slotKey);
+                        }
+                    }
+                });
+    
+                updateTimeSlots(new Date(), tutor.availabilitySlots || getDefaultAvailability());
+            }
+    
+            function updateTimeSlots(date, availabilitySlots) {
+                const slotsContainer = document.getElementById('available-slots');
+                const bookBtn = document.getElementById('book-btn');
+                if (!slotsContainer || !bookBtn) return;
+                
+                const dayOfWeek = date.getDay();
+                const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+                const slots = availabilitySlots ? 
+                    (isWeekend ? availabilitySlots.weekends : availabilitySlots.weekdays) : [];
+                
+                slotsContainer.innerHTML = '';
+                bookBtn.disabled = true;
+                
+                if (slots.length === 0) {
+                    slotsContainer.innerHTML = '<p>No available slots for this day</p>';
+                    return;
+                }
+                
+                const dateKey = date.toISOString().split('T')[0];
+                const tutorId = urlParams.get('id');
+                const now = new Date();
+                
+                slots.forEach(slot => {
+                    const slotKey = `${tutorId}-${dateKey}-${slot}`;
+                    const slotElement = document.createElement('div');
+                    slotElement.className = 'time-slot';
+
+                    const slotDate = new Date(dateKey);
+                    const isExpired = slotDate < now;
+
+                    const isBooked = bookedSlots[slotKey] && !isExpired;
+                    
+                    if (isBooked) {
+                        slotElement.innerHTML = `
+                            <span class="booked-slot">
+                                ${slot} <i class="fa fa-ban"></i>
+                            </span>
+                        `;
+                        slotElement.classList.add('booked');
+                        slotElement.style.cursor = 'not-allowed';
+                    } else {
+                        slotElement.innerHTML = `
+                            <span class="available-slot">
+                                ${slot} <i class="fa fa-hand-pointer-o"></i>
+                            </span>
+                        `;
+                        slotElement.classList.add('available');
+                        slotElement.style.cursor = 'pointer';
+                        slotElement.addEventListener('click', function() {
+                            document.querySelectorAll('.time-slot').forEach(el => {
+                                el.classList.remove('selected');
+                            });
+                            this.classList.add('selected');
+                            bookBtn.disabled = false;
+                        });
+                    }
+                    
+                    slotsContainer.appendChild(slotElement);
+                });
+            }
+    
+            function bookSession(tutorId, date, time, slotKey) {
+                const formattedDate = date.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                bookedSlots[slotKey] = true;
+                localStorage.setItem('bookedSlots', JSON.stringify(bookedSlots));
+
+                updateTimeSlots(date, tutor.availabilitySlots || getDefaultAvailability());
+                
+                alert(`Booking confirmed!\n\nTutor: ${document.getElementById('tutor-name').textContent}\nDate: ${formattedDate}\nTime: ${time}\n\nWe'll send confirmation details to your email.`);
+
+                setTimeout(() => {
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            }
+    
+            function getDefaultAvailability() {
+                return {
+                    weekdays: ["09:00", "11:00", "14:00", "16:00"],
+                    weekends: ["10:00", "13:00", "15:00"]
+                };
+            }
+    
+            function showError(message) {
+                document.body.innerHTML = `
+                    <div class="container my-5">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <h1>${message.includes('not found') ? 'Tutor not found' : 'Error'}</h1>
+                                <p>${message}</p>
+                                <a href="index.html" class="main-button">Return to Home</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const tutorId = urlParams.get('id');
+
+  if (!tutorId) {
+    alert('Tutor ID not found in the URL.');
+    return;
+  }
+
+  try {
+    const response = await fetch(`http://localhost:5000/tutors`);
+    const tutors = await response.json();
+
+    const tutor = tutors.find(t => t.id === tutorId);
+    if (!tutor) {
+      alert('Tutor not found.');
+      return;
+    }
+
+    // Populate the profile page with tutor details
+    document.getElementById('tutor-name').textContent = tutor.name;
+    document.getElementById('tutor-img').src = tutor.image;
+    document.getElementById('tutor-bio').textContent = tutor.bio;
+    document.getElementById('tutor-subject').textContent = tutor.subject;
+    document.getElementById('tutor-location').textContent = tutor.location;
+    document.getElementById('tutor-rate').textContent = tutor.rate;
+
+    // Populate education
+    const educationList = document.getElementById('tutor-education');
+    tutor.education.forEach(edu => {
+      const li = document.createElement('li');
+      li.textContent = `${edu.degree} - ${edu.university}`;
+      educationList.appendChild(li);
+    });
+
+    // Populate reviews
+    const reviewsList = document.getElementById('tutor-reviews');
+    tutor.reviewsList.forEach(review => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${review.author}</strong> (${review.date}): ${review.comment}`;
+      reviewsList.appendChild(li);
+    });
+  } catch (error) {
+    console.error('Error fetching tutor details:', error);
+    alert('Failed to load tutor details. Please try again later.');
+  }
+});
+    </script>
+</body>
+</html>
